@@ -1,0 +1,14 @@
+﻿@page "/"
+@inject HttpClient client
+
+<h1>Welcome to ScryBuilder</h1>
+<i>@Data</i>
+
+@functions {
+    public string Data = string.Empty;
+
+    protected async override Task OnInitAsync()
+    {
+        Data = await client.GetJsonAsync<string>("api/Cards/Card");
+    }
+}
