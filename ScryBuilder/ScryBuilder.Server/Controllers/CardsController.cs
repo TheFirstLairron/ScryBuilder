@@ -12,7 +12,7 @@ namespace ScryBuilder.Server.Controllers
     [ApiController]
     public class CardsController : ControllerBase
     {
-        [HttpGet]
+        [HttpGet("Card")]
         public string Card()
         {
             return "SUCCESS";
