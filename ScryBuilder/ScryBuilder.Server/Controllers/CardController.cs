@@ -13,12 +13,14 @@ namespace ScryBuilder.Server.Controllers
     [ApiController]
     public class CardController : ControllerBase
     {
+        [HttpGet("{name}")]
         public Option<Card> GetCardByName(string name)
         {
             return new None<Card>();
         }
 
-        public List<Option<Card>> GetCardsByName(List<string> names)
+        [HttpGet("list")]
+        public List<Option<Card>> GetCardsByName([FromBody]List<string> names)
         {
             return new List<Option<Card>>();
         }
